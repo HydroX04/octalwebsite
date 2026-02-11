@@ -1,34 +1,49 @@
 // ===== CUSTOM CURSOR =====
+// Helper function to detect touch devices
+const isTouchDevice = () => {
+  return (('ontouchstart' in window) ||
+     (navigator.maxTouchPoints > 0) ||
+     (navigator.msMaxTouchPoints > 0));
+};
+
 const cursor = document.getElementById('cursor');
 const follower = document.getElementById('cursor-follower');
 let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
 
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursor.style.left = mouseX + 'px';
-  cursor.style.top = mouseY + 'px';
-});
+// Only enable custom cursor on non-touch devices
+if (!isTouchDevice()) {
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  });
 
-function animateFollower() {
-  followerX += (mouseX - followerX) * 0.12;
-  followerY += (mouseY - followerY) * 0.12;
-  follower.style.left = followerX + 'px';
-  follower.style.top = followerY + 'px';
-  requestAnimationFrame(animateFollower);
+  function animateFollower() {
+    followerX += (mouseX - followerX) * 0.12;
+    followerY += (mouseY - followerY) * 0.12;
+    follower.style.left = followerX + 'px';
+    follower.style.top = followerY + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  document.querySelectorAll('a, button, .solution-card, .job-card, .insight-card, .about-pillar').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('hover');
+      follower.classList.add('hover');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('hover');
+      follower.classList.remove('hover');
+    });
+  });
+} else {
+  // Hide cursor elements on touch devices
+  if (cursor) cursor.style.display = 'none';
+  if (follower) follower.style.display = 'none';
+  document.body.style.cursor = 'auto';
 }
-animateFollower();
-
-document.querySelectorAll('a, button, .solution-card, .job-card, .insight-card, .about-pillar').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.classList.add('hover');
-    follower.classList.add('hover');
-  });
-  el.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
-    follower.classList.remove('hover');
-  });
-});
 
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
@@ -117,6 +132,18 @@ function closeMobileMenu() {
   document.body.style.overflow = '';
 }
 document.getElementById('mobile-close').addEventListener('click', closeMobileMenu);
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+// Close mobile menu on escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeMobileMenu();
+  }
+});
 
 // ===== FORM SUBMIT =====
 function handleSubmit(e) {
@@ -298,4 +325,57 @@ if (carousel) {
       prevInsight();
     }
   }
+}
+
+// ===== MOBILE VIEWPORT HEIGHT FIX =====
+// Fix for mobile browsers where 100vh doesn't account for address bar
+function setVH() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setVH();
+window.addEventListener('resize', setVH);
+window.addEventListener('orientationchange', setVH);
+
+// ===== PREVENT ZOOM ON MOBILE FORM INPUTS =====
+// Prevent iOS from zooming when focusing on form inputs
+if (isTouchDevice()) {
+  const viewportMeta = document.querySelector('meta[name="viewport"]');
+  if (viewportMeta) {
+    const content = viewportMeta.getAttribute('content');
+    if (!content.includes('maximum-scale')) {
+      viewportMeta.setAttribute('content', content + ', maximum-scale=1');
+    }
+  }
+}
+
+// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#' || href === '') return;
+    
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      const navHeight = document.getElementById('navbar').offsetHeight;
+      const targetPosition = target.offsetTop - navHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Close mobile menu if open
+      closeMobileMenu();
+    }
+  });
+});
+
+// ===== PERFORMANCE OPTIMIZATION =====
+// Reduce animations on low-end devices
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.style.setProperty('--ease-spring', 'ease');
+  document.documentElement.style.setProperty('--ease-out', 'ease');
 }
