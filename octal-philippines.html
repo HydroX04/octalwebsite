@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Octal Philippines, Inc. — Technology with Purpose</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" id="mobile-close">✕</button>
+  <a href="#home" onclick="closeMobileMenu()">Home</a>
+  <a href="#about" onclick="closeMobileMenu()">About Us</a>
+  <a href="#solutions" onclick="closeMobileMenu()">Solutions</a>
+  <a href="#jobs" onclick="closeMobileMenu()">Jobs</a>
+  <a href="#insights" onclick="closeMobileMenu()">Insights</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <img src="uploads/images-removebg-preview.png" alt="Octal Philippines" class="nav-logo-img" style="height: 38px; object-fit: contain;">
+    <div class="nav-logo-text">
+      Octal Philippines
+      <span>Inc.</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#jobs">Jobs</a></li>
+    <li><a href="#insights">Insights</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="openMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-left">
+    <h1 class="hero-headline">
+      Connecting You to the talent that<br>
+      <em>drives success</em>
+    </h1>
+    <p class="hero-sub">
+      Octal Philippines is a trusted provider of technology and software solutions, dedicated to assisting businesses with innovation, optimization, and growth.
+    </p>
+    <div class="hero-actions">
+      <a href="#solutions" class="btn-primary">
+        <span>Explore Solutions</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="#about" class="btn-ghost">
+        Our Story
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num"><span class="count-up" data-target="150">0</span><sup>+</sup></div>
+        <div class="hero-stat-label">Clients Served</div>
+      </div>
+      <div>
+        <div class="hero-stat-num"><span class="count-up" data-target="12">0</span><sup>+</sup></div>
+        <div class="hero-stat-label">Years in Business</div>
+      </div>
+      <div>
+        <div class="hero-stat-num"><span class="count-up" data-target="98">0</span><sup>%</sup></div>
+        <div class="hero-stat-label">Client Retention</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-card-main" style="overflow:hidden;display:flex;align-items:center;justify-content:center;">
+        <img src="uploads/team-Picture-2-1024x576.webp" alt="Business Performance" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+      </div>
+
+      <div class="hero-float-card hero-float-card-1">
+        <div class="float-icon green">🚀</div>
+        <div>
+          <div class="float-info-label">Projects Delivered</div>
+          <div class="float-info-value">500+</div>
+        </div>
+      </div>
+
+      <div class="hero-float-card hero-float-card-2">
+        <div class="float-dots">
+          <div class="float-dot" style="background:#6CA651"></div>
+          <div class="float-dot" style="background:#BBCB2E"></div>
+          <div class="float-dot" style="background:#839705"></div>
+        </div>
+        <div class="float-tag">Team Satisfaction</div>
+        <div class="float-value">96%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marquee">
+    <div class="marquee-item"><span class="dot"></span> Enterprise Solutions</div>
+    <div class="marquee-item"><span class="dot"></span> Cloud Infrastructure</div>
+    <div class="marquee-item"><span class="dot"></span> Digital Transformation</div>
+    <div class="marquee-item"><span class="dot"></span> IT Consulting</div>
+    <div class="marquee-item"><span class="dot"></span> Software Development</div>
+    <div class="marquee-item"><span class="dot"></span> Managed Services</div>
+    <div class="marquee-item"><span class="dot"></span> Data Analytics</div>
+    <div class="marquee-item"><span class="dot"></span> Cybersecurity</div>
+    <div class="marquee-item"><span class="dot"></span> Enterprise Solutions</div>
+    <div class="marquee-item"><span class="dot"></span> Cloud Infrastructure</div>
+    <div class="marquee-item"><span class="dot"></span> Digital Transformation</div>
+    <div class="marquee-item"><span class="dot"></span> IT Consulting</div>
+    <div class="marquee-item"><span class="dot"></span> Software Development</div>
+    <div class="marquee-item"><span class="dot"></span> Managed Services</div>
+    <div class="marquee-item"><span class="dot"></span> Data Analytics</div>
+    <div class="marquee-item"><span class="dot"></span> Cybersecurity</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-left reveal">
+      <div class="section-eyebrow">About Us</div>
+      <h2 class="section-title">Who we are?</h2>
+      <p class="section-desc">Octal Philippines is a progressive technology, consultancy, and software solutions provider that yields high-quality services to its clientele. Founded in 2002 by Silicon Valley engineers with more than 35 years of IT experience, engaged in end-to-end solutions delivery.</p>
+
+      <div class="about-pillars">
+        <div class="about-pillar reveal reveal-delay-1">
+          <div class="pillar-icon">✓</div>
+          <div class="pillar-text">
+            <strong>Technology Expertise</strong>
+            Our expertise lies in assisting companies in designing and implementing solutions to optimize business processes and leverage corporate knowledge.
+          </div>
+        </div>
+        <div class="about-pillar reveal reveal-delay-2">
+          <div class="pillar-icon">↔</div>
+          <div class="pillar-text">
+            <strong>End-to-End Solutions</strong>
+            We deliver comprehensive services including staffing, ERP, system design, application development, implementation, managed services, training, and support.
+          </div>
+        </div>
+        <div class="about-pillar reveal reveal-delay-3">
+          <div class="pillar-icon">★</div>
+          <div class="pillar-text">
+            <strong>Proven Track Record</strong>
+            A proven track record of successful long-term projects with leading companies in the Philippines, bridging the gap between clients and technology.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-right" style="position:relative;background-image:url('uploads/core-values-landscape-WEBP-1024x576.webp');background-size:cover;background-position:center;border-radius:12px;min-height:600px;padding:40px;">
+      <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);border-radius:12px;"></div>
+      <div style="position:relative;z-index:1;">
+        <div class="about-card reveal reveal-delay-1" style="background:transparent;border:none;">
+          <div class="about-card-num" style="color:white;"><span class="count-up-dark" data-target="22">0</span><span>+</span></div>
+          <div class="about-card-label" style="color:rgba(255,255,255,0.95);">Years of proven excellence since 2002</div>
+        </div>
+        <div class="about-card reveal reveal-delay-2" style="background:transparent;border:none;">
+          <div class="about-card-num" style="color:white;"><span class="count-up-dark" data-target="35">0</span><span>+</span></div>
+          <div class="about-card-label" style="color:rgba(255,255,255,0.95);">Years of combined IT expertise from Silicon Valley engineers</div>
+        </div>
+        <div class="about-card reveal reveal-delay-3" style="background:transparent;border:none;">
+          <div class="about-card-num" style="color:white;"><span class="count-up-dark" data-target="100">0</span><span>+</span></div>
+          <div class="about-card-label" style="color:rgba(255,255,255,0.95);">Diverse industries served with customized solutions</div>
+        </div>
+        <div class="about-card reveal reveal-delay-4" style="background:transparent;border:none;">
+          <div class="about-card-num" style="color:white;"><span class="count-up-dark" data-target="500">0</span><span>+</span></div>
+          <div class="about-card-label" style="color:rgba(255,255,255,0.95);">Successful projects delivered with excellence</div>
+        </div>
+        <div class="about-card wide reveal reveal-delay-5" style="background:transparent;border:none;">
+          <div class="about-card-icon" style="color:white;">◆</div>
+          <div>
+            <div class="about-card-num" style="font-size:32px; margin-bottom:8px;color:white;">Headquarters: <span style="font-size:18px;color:var(--green-bright);">Quezon City, Philippines</span></div>
+            <div class="about-card-label" style="max-width:360px; line-height:1.7;color:rgba(255,255,255,0.95);">Proudly Filipino. Globally capable. Serving enterprise and mid-market clients across the Philippines and Southeast Asia.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Values -->
+  <div class="about-inner" style="margin-top:80px;padding-top:80px;border-top:1px solid var(--border);">
+    <div class="about-left reveal">
+      <h2 class="section-title" style="margin-bottom:28px;">Our Core Values</h2>
+      
+      <div class="about-pillars">
+        <div class="about-pillar reveal reveal-delay-1">
+          <div class="pillar-icon">✓</div>
+          <div class="pillar-text">
+            <strong>Honesty and Integrity</strong>
+            We uphold the highest standards of ethics and transparency in every client interaction. We remain accountable for our actions and commitments, ensuring trust in everything we do.
+          </div>
+        </div>
+        <div class="about-pillar reveal reveal-delay-2">
+          <div class="pillar-icon">↔</div>
+          <div class="pillar-text">
+            <strong>Client-Focused Approach</strong>
+            We listen to our clients and tailor our solutions to meet their unique goals. By building meaningful, long-term partnerships, we work toward shared success and sustained growth.
+          </div>
+        </div>
+        <div class="about-pillar reveal reveal-delay-3">
+          <div class="pillar-icon">★</div>
+          <div class="pillar-text">
+            <strong>Innovation</strong>
+            We continuously embrace innovation and stay ahead of industry trends to deliver forward-thinking solutions that empower our clients to thrive in an ever-evolving digital landscape.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-right reveal reveal-delay-1" style="position:relative;background-image:url('uploads/corevalues.PNG');background-size:cover;background-position:center;border-radius:12px;min-height:600px;padding:40px;">
+      <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);border-radius:12px;"></div>
+      <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;">
+        <div style="text-align:center;color:white;">
+          <h3 style="font-family:var(--font-display);font-size:clamp(28px,4vw,48px);font-weight:700;margin-bottom:16px;color:white;">Building Trust,</h3>
+          <h3 style="font-family:var(--font-display);font-size:clamp(28px,4vw,48px);font-weight:700;color:var(--green-bright);">Driving Innovation</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section id="solutions">
+  <div class="solutions-inner">
+    <div class="solutions-header">
+      <div class="reveal">
+        <div class="section-eyebrow">Solutions</div>
+        <h2 class="section-title">What we<br>do best</h2>
+      </div>
+      <div class="solutions-header-right reveal reveal-delay-2">
+        <p class="section-desc">From IT staffing to infrastructure services and software solutions, we deliver comprehensive technology services tailored to your business needs. We connect you with top talent, manage your infrastructure, and build solutions that drive growth.</p>
+        <a href="#contact" class="btn-ghost" style="margin-top:0">
+          Discuss Your Needs
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="solutions-grid">
+      <div class="solution-card reveal" style="background-image:url('uploads/IT-STAFFING-SOLUTIONS-OFficial1.webp');background-size:cover;background-position:center;position:relative;">
+        <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="solution-num">
+          01
+        </div>
+        <h3 class="solution-title">IT Staffing Solutions</h3>
+        <p class="solution-desc">Build your dream team with our flexible and reliable staffing services. Whether you need short-term project support or long-term placements, we connect you with highly qualified professionals.</p>
+        <div class="solution-tags">
+          <span class="solution-tag">Placement</span>
+          <span class="solution-tag">Recruitment</span>
+        </div>
+        </div>
+      </div>
+
+      <div class="solution-card reveal reveal-delay-1" style="background-image:url('uploads/STAFF-AUGMENTATION-with-chair-black-4-1024x1024.webp');background-size:cover;background-position:center;position:relative;">
+        <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="solution-num">
+          02
+        </div>
+        <h3 class="solution-title">IT Staff Augmentation</h3>
+        <p class="solution-desc">Scale your team on demand with skilled IT professionals who integrate seamlessly into your projects, ensuring smooth operations and timely delivery.</p>
+        <div class="solution-tags">
+          <span class="solution-tag">Team Scaling</span>
+          <span class="solution-tag">Project Support</span>
+        </div>
+        </div>
+      </div>
+
+      <div class="solution-card reveal reveal-delay-2" style="background-image:url('uploads/IT-OUTSOURCING-.webp');background-size:cover;background-position:center;position:relative;">
+        <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="solution-num">
+          03
+        </div>
+        <h3 class="solution-title">Offshore Staffing</h3>
+        <p class="solution-desc">Expand your capabilities globally with skilled technical professionals who work remotely as part of your team, ensuring seamless collaboration and consistent project delivery.</p>
+        <div class="solution-tags">
+          <span class="solution-tag">Remote Work</span>
+          <span class="solution-tag">Global Talent</span>
+        </div>
+        </div>
+      </div>
+
+      <div class="solution-card reveal reveal-delay-3" style="background-image:url('uploads/OFFICIAL-AND-EXPANDED-IT-RECRUITMENT-1024x1024.webp');background-size:cover;background-position:center;position:relative;">
+        <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="solution-num">
+          04
+        </div>
+        <h3 class="solution-title">Recruitment & Executive Search</h3>
+        <p class="solution-desc">Find the right talent for every role — from technical specialists to senior leaders. Our recruitment experts help you secure permanent hires who bring lasting impact.</p>
+        <div class="solution-tags">
+          <span class="solution-tag">Hiring</span>
+          <span class="solution-tag">Leadership</span>
+        </div>
+        </div>
+      </div>
+
+      <div class="solution-card featured reveal reveal-delay-1" style="background-image:url('uploads/5.webp');background-size:cover;background-position:center;position:relative;">
+        <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="solution-num">
+          05
+        </div>
+        <h3 class="solution-title">Bluesource Infrastructure Services (BLISS)</h3>
+        <p class="solution-desc">Keep your IT infrastructure running at peak performance with our comprehensive suite of managed services designed to ensure reliability, security, and business continuity.</p>
+        <div class="solution-tags">
+          <span class="solution-tag">Infrastructure</span>
+          <span class="solution-tag">Managed Services</span>
+        </div>
+        </div>
+      </div>
+
+      <div class="solution-card reveal reveal-delay-2" style="background-image:url('uploads/6.webp');background-size:cover;background-position:center;position:relative;">
+        <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="solution-num">
+          06
+        </div>
+        <h3 class="solution-title">Managed Maintenance Services (MMS)</h3>
+        <p class="solution-desc">Maximize uptime and performance with proactive monitoring, dedicated support, and Hardware-as-a-Service (HaaS) solutions that keep your business agile and cost-efficient.</p>
+        <div class="solution-tags">
+          <span class="solution-tag">Maintenance</span>
+          <span class="solution-tag">Support</span>
+        </div>
+        </div>
+      </div>
+
+      <div class="solution-card reveal reveal-delay-3" style="background-image:url('uploads/solution7.PNG');background-size:cover;background-position:center;position:relative;">
+        <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="solution-num">
+          07
+        </div>
+        <h3 class="solution-title">Business Continuity & Disaster Recovery</h3>
+        <p class="solution-desc">Safeguard your operations with expert-led strategies that minimize downtime and ensure rapid recovery from disruptions, keeping your business resilient.</p>
+        <div class="solution-tags">
+          <span class="solution-tag">DR Consulting</span>
+          <span class="solution-tag">Continuity</span>
+        </div>
+        </div>
+      </div>
+
+      <div class="solution-card reveal reveal-delay-1" style="background-image:url('uploads/solution8.PNG');background-size:cover;background-position:center;position:relative;">
+        <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="solution-num">
+          08
+        </div>
+        <h3 class="solution-title">Authorized Reseller of Industry-Leading Technologies</h3>
+        <p class="solution-desc">Power your infrastructure with trusted solutions like IBM watsonx Code Assistant, Blancco Data Erasure Software, Securelink VSN+, Airedale Aircon, iPro CCTV, and Commscope Cabling.</p>
+        <div class="solution-tags">
+          <span class="solution-tag">Technology</span>
+          <span class="solution-tag">Solutions</span>
+        </div>
+        </div>
+      </div>
+
+      <div class="solution-card reveal reveal-delay-2" style="background-image:url('uploads/solution9.PNG');background-size:cover;background-position:center;position:relative;">
+        <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="solution-num">
+          09
+        </div>
+        <h3 class="solution-title">ERP Solutions</h3>
+        <p class="solution-desc">Streamline processes, enhance visibility, and improve decision-making with tailored ERP systems designed to connect every part of your organization for optimal efficiency.</p>
+        <div class="solution-tags">
+          <span class="solution-tag">ERP</span>
+          <span class="solution-tag">Implementation</span>
+        </div>
+        </div>
+      </div>
+
+      <div class="solution-card reveal reveal-delay-3" style="background-image:url('uploads/solution10.PNG');background-size:cover;background-position:center;position:relative;">
+        <div style="position:absolute;inset:0;background:rgba(108,166,81,0.6);"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="solution-num">
+          10
+        </div>
+        <h3 class="solution-title">Managed Services for Application Development</h3>
+        <p class="solution-desc">Ensure your applications remain secure, scalable, and future-ready. We handle everything from customization to ongoing maintenance, so you can focus on growing your business.</p>
+        <div class="solution-tags">
+          <span class="solution-tag">App Dev</span>
+          <span class="solution-tag">Maintenance</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOBS -->
+<section id="jobs">
+  <div class="jobs-inner">
+    <div class="jobs-layout">
+      <div class="jobs-left reveal">
+        <div class="section-eyebrow">Careers</div>
+        <h2 class="section-title">Join a team that builds what matters</h2>
+        <p class="section-desc">We're always looking for sharp minds who are passionate about technology and its power to transform organizations. If that's you, let's talk.</p>
+        <a href="#contact" class="btn-primary" style="width:fit-content; margin-top:8px;">
+          <span>Send Your CV</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+
+        <div class="jobs-culture">
+          <div class="culture-item"><span class="culture-dot"></span> Hybrid & flexible work arrangements</div>
+          <div class="culture-item"><span class="culture-dot"></span> Continuous learning & certification budget</div>
+          <div class="culture-item"><span class="culture-dot"></span> Competitive salary + performance incentives</div>
+          <div class="culture-item"><span class="culture-dot"></span> Health & wellness benefits</div>
+          <div class="culture-item"><span class="culture-dot"></span> Mentorship from senior industry leaders</div>
+        </div>
+      </div>
+
+      <div class="jobs-right">
+        <div class="jobs-list">
+          <a href="#contact" class="job-card reveal">
+            <div class="job-info">
+              <div class="job-title">Network Engineer</div>
+              <div class="job-meta">
+                <span class="job-meta-item">📍 Makati, PH</span>
+                <span class="job-meta-item">💼 Full-time</span>
+                <span class="job-meta-item">💰 Competitive</span>
+              </div>
+            </div>
+            <div class="job-arrow">→</div>
+          </a>
+
+          <a href="#contact" class="job-card reveal reveal-delay-1">
+            <div class="job-info">
+              <div class="job-title">Accounting Head</div>
+              <div class="job-meta">
+                <span class="job-meta-item">📍 Makati, PH</span>
+                <span class="job-meta-item">💼 Full-time</span>
+                <span class="job-meta-item">💰 Competitive</span>
+              </div>
+            </div>
+            <div class="job-arrow">→</div>
+          </a>
+
+          <a href="#contact" class="job-card reveal reveal-delay-2">
+            <div class="job-info">
+              <div class="job-title">Credit Investigator</div>
+              <div class="job-meta">
+                <span class="job-meta-item">📍 Hybrid</span>
+                <span class="job-meta-item">💼 Full-time</span>
+                <span class="job-meta-item">💰 Competitive</span>
+              </div>
+            </div>
+            <div class="job-arrow">→</div>
+          </a>
+
+          <a href="#contact" class="job-card reveal reveal-delay-3">
+            <div class="job-info">
+              <div class="job-title">Software Engineer III (Java 17)</div>
+              <div class="job-meta">
+                <span class="job-meta-item">📍 Makati, PH</span>
+                <span class="job-meta-item">💼 Full-time</span>
+                <span class="job-meta-item">💰 Competitive</span>
+              </div>
+            </div>
+            <div class="job-arrow">→</div>
+          </a>
+
+          <a href="#contact" class="job-card reveal reveal-delay-4">
+            <div class="job-info">
+              <div class="job-title">Frontend Developer</div>
+              <div class="job-meta">
+                <span class="job-meta-item">📍 Hybrid</span>
+                <span class="job-meta-item">💼 Full-time</span>
+                <span class="job-meta-item">💰 Competitive</span>
+              </div>
+            </div>
+            <div class="job-arrow">→</div>
+          </a>
+
+          <a href="#contact" class="job-card reveal reveal-delay-5">
+            <div class="job-info">
+              <div class="job-title">SEO Manager</div>
+              <div class="job-meta">
+                <span class="job-meta-item">📍 Makati, PH</span>
+                <span class="job-meta-item">💼 Full-time</span>
+                <span class="job-meta-item">💰 Competitive</span>
+              </div>
+            </div>
+            <div class="job-arrow">→</div>
+          </a>
+
+          <a href="#contact" class="job-card reveal" style="animation-delay: 0.6s;">
+            <div class="job-info">
+              <div class="job-title">Full Stack Developer</div>
+              <div class="job-meta">
+                <span class="job-meta-item">📍 Hybrid</span>
+                <span class="job-meta-item">💼 Full-time</span>
+                <span class="job-meta-item">💰 Competitive</span>
+              </div>
+            </div>
+            <div class="job-arrow">→</div>
+          </a>
+
+          <a href="#contact" class="job-card reveal" style="animation-delay: 0.7s;">
+            <div class="job-info">
+              <div class="job-title">Software Design Engineer (C++)</div>
+              <div class="job-meta">
+                <span class="job-meta-item">📍 Makati, PH</span>
+                <span class="job-meta-item">💼 Full-time</span>
+                <span class="job-meta-item">💰 Competitive</span>
+              </div>
+            </div>
+            <div class="job-arrow">→</div>
+          </a>
+
+          <a href="#contact" class="job-card reveal" style="animation-delay: 0.8s;">
+            <div class="job-info">
+              <div class="job-title">API Developer (C#.NET)</div>
+              <div class="job-meta">
+                <span class="job-meta-item">📍 Hybrid</span>
+                <span class="job-meta-item">💼 Full-time</span>
+                <span class="job-meta-item">💰 Competitive</span>
+              </div>
+            </div>
+            <div class="job-arrow">→</div>
+          </a>
+
+          <a href="#contact" class="job-card reveal" style="animation-delay: 0.9s;">
+            <div class="job-info">
+              <div class="job-title">Flutter Developer (C#.NET)</div>
+              <div class="job-meta">
+                <span class="job-meta-item">📍 Makati, PH</span>
+                <span class="job-meta-item">💼 Full-time</span>
+                <span class="job-meta-item">💰 Competitive</span>
+              </div>
+            </div>
+            <div class="job-arrow">→</div>
+          </a>
+        </div>
+
+        <div class="jobs-cta-banner reveal">
+          <div class="jobs-cta-text">
+            <strong>Don't see your role?</strong>
+            We're always open to exceptional talent. Send us your profile.
+          </div>
+          <a href="#contact" class="btn-white">Get in Touch →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section id="insights">
+  <div class="insights-inner">
+    <div class="insights-header">
+      <div class="reveal">
+        <div class="section-eyebrow">Insights</div>
+        <h2 class="section-title">Thinking out loud</h2>
+      </div>
+      <a href="#insights" class="btn-ghost reveal reveal-delay-2" style="color:var(--ink-soft)">
+        View All Articles
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+
+    <div class="insights-carousel-container">
+      <div class="insights-carousel" id="insightsCarousel">
+        <div class="insight-card-carousel active">
+          <div class="insight-card-img">
+            <img src="uploads/insights1.webp" alt="Octal Summer Outing" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="insight-card-body">
+            <h3 class="insight-card-title">Octal Summer Outing 2023</h3>
+            <p class="insight-card-excerpt">Good times, bonds created, and teamwork strengthened during the Octal Summer Outing 2023! Core memory unlocked indeed, as the team had a fun summer adventure and activities at Botolan, Zambales.</p>
+          </div>
+        </div>
+
+        <div class="insight-card-carousel">
+          <div class="insight-card-img">
+            <img src="uploads/insights2.webp" alt="Team Building" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="insight-card-body">
+            <h3 class="insight-card-title">Summer Team Building</h3>
+            <p class="insight-card-excerpt">Team buildings during the summer season is not just a time to recharge and bathe under the sun but also an opportunity to bond and share wonderful memories with everyone.</p>
+          </div>
+        </div>
+
+        <div class="insight-card-carousel">
+          <div class="insight-card-img">
+            <img src="uploads/insights3.webp" alt="Acumatica Award" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="insight-card-body">
+            <h3 class="insight-card-title">Acumatica Asia Partner Award</h3>
+            <p class="insight-card-excerpt">CloudQwest/Octal Philippines has been awarded by Acumatica as Asia Partner of the Year – 2017</p>
+          </div>
+        </div>
+
+        <div class="insight-card-carousel">
+          <div class="insight-card-img">
+            <img src="uploads/insights4.webp" alt="Christmas Party" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="insight-card-body">
+            <h3 class="insight-card-title">Octal Christmas Party 2018</h3>
+            <p class="insight-card-excerpt">It's the most wonderful time of the year. Octal, Litus and Cloudqwest Christmas Party 2018</p>
+          </div>
+        </div>
+
+        <div class="insight-card-carousel">
+          <div class="insight-card-img">
+            <img src="uploads/insights5.webp" alt="Team Bonding" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="insight-card-body">
+            <h3 class="insight-card-title">Team Bonding at Capones Vista</h3>
+            <p class="insight-card-excerpt">An away-from-keyboard moment! Great to had the entire company/team together for a bonding & team building at Capones Vista Beach Resort in Zambales.</p>
+          </div>
+        </div>
+
+        <div class="insight-card-carousel">
+          <div class="insight-card-img">
+            <img src="uploads/insights6.webp" alt="Bamboo Planting" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="insight-card-body">
+            <h3 class="insight-card-title">Community Service - Bamboo Planting</h3>
+            <p class="insight-card-excerpt">Octal together with Litus Software and Sun Micro Development Concepts Inc. these enthusiastic employees spend their weekend giving back to nature by planting Bamboos as their pledge for a greener community.</p>
+          </div>
+        </div>
+
+        <div class="insight-card-carousel">
+          <div class="insight-card-img">
+            <img src="uploads/insights7.webp" alt="Christmas Celebration" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="insight-card-body">
+            <h3 class="insight-card-title">Christmas Celebration</h3>
+            <p class="insight-card-excerpt">This the season to gather around and share the joy of Christmas – and another year that passed! At this point in time, we see a growing family of Octal.</p>
+          </div>
+        </div>
+
+        <div class="insight-card-carousel">
+          <div class="insight-card-img">
+            <img src="uploads/insights8.webp" alt="Bamboo Planting Warm-up" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="insight-card-body">
+            <h3 class="insight-card-title">Preparation for Community Tree Planting</h3>
+            <p class="insight-card-excerpt">Before the main event, here we have the Octal employees doing warm-up exercise in preparation for digging grounds and planting bamboos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-indicators" id="carouselIndicators"></div>
+      <div class="carousel-swipe-hint">← Swipe →</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-bg"></div>
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <div class="section-eyebrow">Contact Us</div>
+      <h2 class="section-title">Let's start a conversation</h2>
+      <p class="section-desc">Whether you have a specific project in mind or just want to explore what's possible, our team is ready to listen and advise.</p>
+
+      <div class="contact-details">
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">📍</div>
+          <div>
+            <div class="contact-detail-label">Office</div>
+            <div class="contact-detail-value">QY Building, 233 Tomas Morato Ext, Brgy. South Triangle, Quezon City Philippines</div>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">📧</div>
+          <div>
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-value">info@octaltech.net</div>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">📞</div>
+          <div>
+            <div class="contact-detail-label">Phone</div>
+            <div class="contact-detail-value">02 7006-5975 / 02 8332-0908</div>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">⏰</div>
+          <div>
+            <div class="contact-detail-label">Office Hours</div>
+            <div class="contact-detail-value">Mon – Fri, 8:00 AM – 6:00 PM PHT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap reveal reveal-delay-2">
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row-2">
+          <div>
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" placeholder="Juan">
+          </div>
+          <div>
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" placeholder="dela Cruz">
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Work Email</label>
+          <input type="email" class="form-input" placeholder="juan@company.com">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Company</label>
+          <input type="text" class="form-input" placeholder="Your Organization">
+        </div>
+        <div class="form-row">
+          <label class="form-label">How can we help?</label>
+          <select class="form-input form-select">
+            <option value="" disabled selected>Select a service</option>
+            <option>Cloud & Infrastructure</option>
+            <option>Digital Transformation</option>
+            <option>Software Development</option>
+            <option>Data & Analytics</option>
+            <option>Cybersecurity</option>
+            <option>IT Consulting & Staffing</option>
+            <option>Careers / Job Application</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Message</label>
+          <textarea class="form-input" rows="4" placeholder="Tell us more about your project, timeline, or question..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">
+          <span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+            Send Message
+          </span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="#home" class="nav-logo" style="display:inline-flex">
+        <img src="uploads/images-removebg-preview.png" alt="Octal Philippines" class="nav-logo-img" style="height: 38px; object-fit: contain;">
+        <div class="nav-logo-text" style="color:white">
+          Octal Philippines
+          <span style="color:var(--green-bright);">Inc.</span>
+        </div>
+      </a>
+      <p class="footer-brand-text">Octal Philippines Inc. is a trusted provider of technology and software solutions connecting highly skilled IT professionals with prominent clients across diverse industries since 2002.</p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social" title="LinkedIn">in</a>
+        <a href="#" class="footer-social" title="Facebook">f</a>
+        <a href="#" class="footer-social" title="X / Twitter">𝕏</a>
+        <a href="#" class="footer-social" title="GitHub">⌥</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-links">
+        <a href="#about">→ About Us</a>
+        <a href="#solutions">→ Solutions</a>
+        <a href="#insights">→ Insights</a>
+        <a href="#jobs">→ Careers</a>
+        <a href="#contact">→ Contact</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Services</div>
+      <div class="footer-links">
+        <a href="#solutions">→ Cloud Services</a>
+        <a href="#solutions">→ Digital Transformation</a>
+        <a href="#solutions">→ Software Dev</a>
+        <a href="#solutions">→ Data & Analytics</a>
+        <a href="#solutions">→ Cybersecurity</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Stay Updated</div>
+      <p class="footer-newsletter-desc">Get our monthly insights on technology trends, industry news, and career opportunities delivered to your inbox.</p>
+      <div class="footer-newsletter-form">
+        <input type="email" class="footer-newsletter-input" placeholder="your@email.com">
+        <button class="footer-newsletter-btn" onclick="subscribeNewsletter(event)">Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Octal Philippines, Inc. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
